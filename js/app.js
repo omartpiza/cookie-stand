@@ -42,19 +42,54 @@ const locales = [seattleLocal, tokyoLocal, dubaiLocal, parisLocal, limaLocal];
 locales.forEach(ubicacion => {estimateSales(ubicacion);});
 
 const mainElement = document.querySelector('main');
-locales.forEach(ubicacion => {
-    const locationList = document.createElement('ul');
-    const locationHeader = document.createElement('h2');
-    locationHeader.textContent = ubicacion.ciudad;
-    locationList.appendChild(locationHeader);
-    for (let i = 0; i < horas.length; i++) {
-        const listItem = document.createElement('li');
-        if (i === horas.length - 1) {
-            listItem.textContent = `${horas[i]}: ${ubicacion.cookiesEachHour[i]} galletas`;
-        } else {
-            listItem.textContent = `${horas[i]}: ${ubicacion.cookiesEachHour[i]} galletas`;
+
+if(window.location.pathname==='/sales.html'){
+    locales.forEach(ubicacion => {
+        const locationList = document.createElement('ul');
+        const locationHeader = document.createElement('h2');
+        locationHeader.textContent = ubicacion.ciudad;
+        locationList.appendChild(locationHeader);
+        for (let i = 0; i < horas.length; i++) {
+            const listItem = document.createElement('li');
+            if (i === horas.length - 1) {
+                listItem.textContent = `${horas[i]}: ${ubicacion.cookiesEachHour[i]} galletas`;
+            } else {
+                listItem.textContent = `${horas[i]}: ${ubicacion.cookiesEachHour[i]} galletas`;
+            }
+            locationList.appendChild(listItem);
         }
-        locationList.appendChild(listItem);
+        mainElement.appendChild(locationList);
+    });
+}else if(window.location.pathname === '/index.html'){
+    function createLocationInfo(ciudad, horario, telefono, direccion) {
+        return {
+            ciudad: ciudad,
+            horario: horario,
+            telefono: telefono,
+            direccion: direccion
+        };
     }
-    mainElement.appendChild(locationList);
-});
+
+    const seattleInfo = createLocationInfo('Seattle', '6am - 7pm', '2901 3rd Ave #300, Seattle, WA 98121', '123-456-7890');
+    const tokyoInfo = createLocationInfo('Tokyo', '6am - 7pm', '1 Chome-1-2 Oshiage, Sumida City, Tokyo 131-8634', '222-222-2222');
+    const dubaiInfo = createLocationInfo('Dubai', '6am - 7pm', '1 Sheikh Mohammed bin Rashid Blvd - Dubai', '333-333-3333');
+    const parisInfo = createLocationInfo('Paris', '6am - 7pm', 'Cahmp de Mars, 5 Avenue Anatole France, 75007 Paris', '444-444-4444');
+    const limaInfo = createLocationInfo('Lima', '6am - 7pm', 'Ca. Gral. Borgoño Cuadra 8, Miraflores 1504', '555-555-5555');
+
+    const locationInfos = [seattleInfo, tokyoInfo, dubaiInfo, parisInfo, limaInfo];
+
+    locationInfos.forEach(info => {
+        const locationInfo = document.createElement('div');
+        const infoHeader = document.createElement('h2');
+        const infoList = document.createElement('ul');
+        infoHeader.textContent = info.ciudad;
+        locationInfo.appendChild(infoHeader);
+        infoList.innerHTML = `
+            <li>Hours Open: ${info.horario}</li>
+            <li>Contac Info: ${info.telefono}</li>
+            <li>Location: ${info.direccion}</li>
+        `;
+        locationInfo.appendChild(infoList);
+        mainElement.appendChild(locationInfo);
+    });
+}
