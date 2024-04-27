@@ -16,6 +16,8 @@ Estoy emocionado por esta clase porque deseo mejorar mis habilidades en HTML y C
 ### Puntuación de Accesibilidad de Lighthouse
 
 * ![Lighthouse](/img/lighthouse-06.jpg)
+* ![Wireframe Baja Fidelidad](/img/wireframe-baja.jpg)
+* ![Wireframe Alta Fidelidad](/img/wireframe-alta.jpg)
 
 ### Reflexiones y Comentarios
 
