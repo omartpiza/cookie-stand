@@ -1,7 +1,5 @@
 'use strict';
 
-console.log(window.location.pathname);
-
 function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -45,7 +43,7 @@ locales.forEach(ubicacion => {estimateSales(ubicacion);});
 
 const mainElement = document.querySelector('main');
 
-if(window.location.pathname==='/sales.html'){
+//if(window.location.pathname==='/sales.html'){
     locales.forEach(ubicacion => {
         const locationList = document.createElement('ul');
         const locationHeader = document.createElement('h2');
@@ -62,7 +60,7 @@ if(window.location.pathname==='/sales.html'){
         }
         mainElement.appendChild(locationList);
     });
-}else if(window.location.pathname === '/index.html'){
+/*}else if(window.location.pathname === '/index.html'){
     function createLocationInfo(ciudad, horario, telefono, direccion) {
         return {
             ciudad: ciudad,
@@ -94,4 +92,4 @@ if(window.location.pathname==='/sales.html'){
         locationInfo.appendChild(infoList);
         mainElement.appendChild(locationInfo);
     });
-}
+}*/
