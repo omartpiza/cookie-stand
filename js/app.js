@@ -43,7 +43,7 @@ locales.forEach(ubicacion => {estimateSales(ubicacion);});
 
 const mainElement = document.querySelector('main');
 
-if(window.location.pathname==='/sales.html'){
+if (document.body.classList.contains('sales-page')) {
     locales.forEach(ubicacion => {
         const locationList = document.createElement('ul');
         const locationHeader = document.createElement('h2');
@@ -60,7 +60,9 @@ if(window.location.pathname==='/sales.html'){
         }
         mainElement.appendChild(locationList);
     });
-}else if(window.location.pathname === '/index.html'){
+}
+
+
     function createLocationInfo(ciudad, horario, telefono, direccion) {
         return {
             ciudad: ciudad,
@@ -70,6 +72,7 @@ if(window.location.pathname==='/sales.html'){
         };
     }
 
+
     const seattleInfo = createLocationInfo('Seattle', '6am - 7pm', '2901 3rd Ave #300, Seattle, WA 98121', '123-456-7890');
     const tokyoInfo = createLocationInfo('Tokyo', '6am - 7pm', '1 Chome-1-2 Oshiage, Sumida City, Tokyo 131-8634', '222-222-2222');
     const dubaiInfo = createLocationInfo('Dubai', '6am - 7pm', '1 Sheikh Mohammed bin Rashid Blvd - Dubai', '333-333-3333');
@@ -78,6 +81,7 @@ if(window.location.pathname==='/sales.html'){
 
     const locationInfos = [seattleInfo, tokyoInfo, dubaiInfo, parisInfo, limaInfo];
 
+if (document.body.classList.contains('location-info-page')) {
     locationInfos.forEach(info => {
         const locationInfo = document.createElement('div');
         const infoHeader = document.createElement('h2');
