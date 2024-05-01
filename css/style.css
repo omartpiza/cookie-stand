@@ -26,11 +26,13 @@ header h1{
     padding: 60px;
     background-color: black;
     font-size: 60px;
+    margin: 0;
 }
 
 header nav {
     background-color: salmon;
     padding: 10px;
+    margin-bottom: 40px;
 }
 
 header nav a {
@@ -48,4 +50,37 @@ header img{
 
 body {
     background-color: white;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+}
+
+th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+    background-color: salmon;
+}
+
+th {
+    background-color: lightgrey;
+}
+
+td:first-child {
+    background-color: lightgrey;
+}
+
+tr:not(:first-child) td:last-child {
+    background-color: lightyellow;
+}
+
+tr:last-child td:not(:first-child) {
+    background-color: lightblue;
+}
+
+tr:last-child td:last-child {
+    background-color: lightgreen;
 }
