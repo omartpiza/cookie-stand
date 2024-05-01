@@ -1,4 +1,4 @@
-# LABORATORIO - 3
+# LABORATORIO - 7
 
 ## About Me
 
@@ -15,17 +15,15 @@ Estoy emocionado por esta clase porque deseo mejorar mis habilidades en HTML y C
 
 ### Puntuación de Accesibilidad de Lighthouse
 
-* ![Lighthouse](/img/lighthouse-06.jpg)
-* ![Wireframe Baja Fidelidad](/img/wireframe-baja.jpg)
-* ![Wireframe Alta Fidelidad](/img/wireframe-alta.jpg)
+* ![Lighthouse](/img/lighthouse-07.jpg)
 
 ### Reflexiones y Comentarios
 
 1. ¿Cómo te fue, en general?
-- Fue dificil al inicio, pero luego de comprender la explicacion de Alex y en conjunto con la informacion brindada por Bruno, pude entender como ordenar la informacion.
+- Al principio fue un poco complicado adaptar mi codigo, pero como tenia ordenado por obejetos la informacion se facilito un poco.
 2. ¿Qué observaciones o preguntas tienes acerca de lo que hemos aprendido hasta ahora?
 - Quisiera saber de que otra forma lo hicieron mis compañeros y ademas, cual es la forma por dafault como se haria normalamente si fuese ya un experto.
 3. ¿Cuánto tiempo te tomó terminar esta tarea?
-- me tomo un aprox de 9h, ya que tuve que encontrar la mejor manera como ordenar la informaciom, desplegarla en cada pagina y ademas de entender la logica de lo que queria hacer.
+- me tomo un aprox de 4h.
 4. Y, antes de que comenzaras, ¿cuánto tiempo creiste que te tomaría terminar esta tarea?
 - crei que me tomaria 3h hacer solo la estructura pero tomo mucho mas tiempo.
