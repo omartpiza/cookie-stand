@@ -126,18 +126,16 @@ tr:last-child td:last-child {
 }
 
 .dark-mode .location-info-page {
-    color: #fff; /* Agregar color blanco para el texto de información de la tienda */
+    color: #fff; 
 }
 
 .hero {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
 
 .hero img {
-    max-width: 100%;
+    width: 200px;
     height: auto;
-    margin-bottom: 20px; /* Espacio entre cada imagen */
 }
