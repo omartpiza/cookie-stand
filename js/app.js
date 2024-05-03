@@ -1,5 +1,22 @@
 'use strict';
 
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleModeButton = document.getElementById('toggle-mode');
+    const body = document.body;
+
+    toggleModeButton.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        toggleInfoMode();
+    });
+});
+
+function toggleInfoMode() {
+    const locationInfoItems = document.querySelectorAll('.location-info-page h2, .location-info-page li');
+    locationInfoItems.forEach(function(item) {
+        item.classList.toggle('dark-mode');
+    });
+}
+
 function Ubicacion(ciudad, minCustomersPerHour, maxCustomersPerHour, averageCostumerPerHour) {
     this.ciudad = ciudad;
     this.minCustomersPerHour = minCustomersPerHour;
@@ -93,6 +110,8 @@ if (document.body.classList.contains('sales-page')) {
     footerRow.appendChild(totalCookiesCell);
     table.appendChild(footerRow);
     mainElement.appendChild(table);
+
+    
 }
 
 function createLocationInfo(ciudad, horario, telefono, direccion) {

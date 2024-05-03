@@ -84,3 +84,60 @@ tr:last-child td:not(:first-child) {
 tr:last-child td:last-child {
     background-color: lightgreen;
 }
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode nav {
+    background-color: #444;
+}
+
+.dark-mode nav a {
+    color: #fff;
+}
+
+.dark-mode header {
+    background-color: #222;
+}
+
+.dark-mode header h1 {
+    color: salmon;
+}
+
+.dark-mode .hero img {
+    filter: brightness(50%);
+}
+
+.dark-mode footer {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-mode .location-info-page h2,
+.dark-mode .location-info-page li {
+    color: #fff;
+}
+
+.dark-mode button {
+    background-color: salmon;
+    color: #fff;
+}
+
+.dark-mode .location-info-page {
+    color: #fff; /* Agregar color blanco para el texto de información de la tienda */
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* Espacio entre cada imagen */
+}
