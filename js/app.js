@@ -45,6 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+function updateFooter() {
+    const lastFooterRow = tfooter.lastElementChild;
+    tfooter.removeChild(lastFooterRow);
+}   
+
 function toggleInfoMode() {
     const locationInfoItems = document.querySelectorAll('.location-info-page h2, .location-info-page li');
     locationInfoItems.forEach(function(item) {
