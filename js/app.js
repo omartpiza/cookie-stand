@@ -8,7 +8,42 @@ document.addEventListener('DOMContentLoaded', function() {
         body.classList.toggle('dark-mode');
         toggleInfoMode();
     });
-});
+
+    const form = document.getElementById('new-location-form');
+    const tbody = document.querySelector('#sales-table tbody');
+    const tfooter = document.querySelector('#sales-table tfoot');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const inputCity = document.getElementById('city').value;
+        const inputMinConsumer = parseInt(document.getElementById('min-customers').value);
+        const inputMaxConsumer = parseInt(document.getElementById('max-customers').value);
+        const inputAverage = parseFloat(document.getElementById('avg-cookies').value);
+
+        const existentLocation = locales.find(function(ubicacion) {
+            form.reset();
+            return ubicacion.ciudad === inputCity;
+        });
+
+        if (existentLocation) {
+            alert('Ya existe una ubicación con el mismo nombre de ciudad.');
+            form.reset();
+            return;
+        }
+
+        const nuevaLocation = new Ubicacion(inputCity, inputMinConsumer, inputMaxConsumer, inputAverage);
+        nuevaLocation.estimateSales();
+
+        locales.push(nuevaLocation);
+
+        const newRow = nuevaLocation.render();
+        tbody.appendChild(newRow);
+
+        updateFooter();
+        form.reset();
+        });
+    });
 
 function toggleInfoMode() {
     const locationInfoItems = document.querySelectorAll('.location-info-page h2, .location-info-page li');
@@ -73,6 +108,7 @@ const mainElement = document.querySelector('main');
 
 if (document.body.classList.contains('sales-page')) {
     const table = document.createElement('table');
+    table.id = 'sales-table';
     const headerRow = document.createElement('tr');
     const emptyCell = document.createElement('th');
     headerRow.appendChild(emptyCell);
@@ -83,10 +119,12 @@ if (document.body.classList.contains('sales-page')) {
     });
     table.appendChild(headerRow);
 
+    const tbody = document.createElement('tbody');
     locales.forEach(function(ubicacion) {
         const locationRow = ubicacion.render();
-        table.appendChild(locationRow);
+        tbody.appendChild(locationRow);
     });
+    table.appendChild(tbody);
 
     const footerRow = document.createElement('tr');
     const totalCell = document.createElement('td');
@@ -95,8 +133,6 @@ if (document.body.classList.contains('sales-page')) {
     let totalCookies = 0;
     for (let i = 0; i < horas.length-1 ; i++) {
         let totalHourCookies = 0;
-        // for(let j=0; j< Ubicacion.cookiesEachHour; j++)
-        // totalHourCookies += ubicacion.cookiesEachHour[i].
         locales.forEach(function(ubicacion) {
             totalHourCookies += ubicacion.cookiesEachHour[i];
         });
@@ -109,9 +145,7 @@ if (document.body.classList.contains('sales-page')) {
     totalCookiesCell.textContent = totalCookies ;
     footerRow.appendChild(totalCookiesCell);
     table.appendChild(footerRow);
-    mainElement.appendChild(table);
-
-    
+    mainElement.appendChild(table);   
 }
 
 function createLocationInfo(ciudad, horario, telefono, direccion) {
