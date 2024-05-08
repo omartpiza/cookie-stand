@@ -20,7 +20,7 @@ Estoy emocionado por esta clase porque deseo mejorar mis habilidades en HTML y C
 ### Reflexiones y Comentarios
 
 1. ¿Cómo te fue, en general?
-- Fue un poco mas sencillo al ya tener una idea de como hacerlo con el laboratorio anterior
+- Se me complico un poco porque tuve que modificar mi codigo y tengo algunos codigos que interfieren en el resultado
 2. ¿Qué observaciones o preguntas tienes acerca de lo que hemos aprendido hasta ahora?
 - Quisiera saber de que otra forma lo hicieron mis compañeros y ademas, cual es la forma por dafault como se haria normalamente si fuese ya un experto.
 3. ¿Cuánto tiempo te tomó terminar esta tarea?
