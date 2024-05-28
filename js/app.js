@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const inputAverage = parseFloat(document.getElementById('avgCookies').value);
 
         const existentLocation = locales.find(function (ubicacion) {
-            return ubicacion.ciudad === inputCity;
+            return ubicacion.ciudad.toLowerCase() === inputCity;
         });
 
         if (existentLocation) {
