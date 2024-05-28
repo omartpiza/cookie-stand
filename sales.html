@@ -9,34 +9,62 @@
 <body class="sales-page">
     <header>
         <h1>Welcome Pat Salmon Cookies</h1>
-            <nav class="nav">
-                <a href="index.html" >Home</a>
-                <a href="sales.html" >Sales Data</a>
-            </nav>
-            <button id="toggle-mode">Modo oscuro</button>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="sales.html">Sales Data</a>
+        </nav>
+        <button id="toggle-mode">Modo oscuro</button>
     </header>
     <main>
-        <form id="new-location-form">
+        <form id="formData">
             <fieldset>
                 <legend>Add a new store to the table!!!</legend>
                 <label for="city">Location Name:</label>
                 <input type="text" id="city" name="city" required><br><br>
 
-                <label for="min-customers">Minimum Customers per Hour:</label>
-                <input type="number" id="min-customers" name="min-customers" required><br><br>
+                <label for="minCostumer">Minimum Customers per Hour:</label>
+                <input type="number" id="minCostumer" name="minCostumer" required><br><br>
 
-                <label for="max-customers">Maximum Customers per Hour:</label>
-                <input type="number" id="max-customers" name="max-customers" required><br><br>
+                <label for="maxCostumer">Maximum Customers per Hour:</label>
+                <input type="number" id="maxCostumer" name="maxCostumer" required><br><br>
 
-                <label for="avg-cookies">Average Cookies per Sale:</label>
-                <input type="number" id="avg-cookies" name="avg-cookies" step="0.1" required><br><br>
+                <label for="avgCookies">Average Cookies per Sale:</label>
+                <input type="number" id="avgCookies" name="avgCookies" step="0.1" required><br><br>
 
-                <button type="submit" id="agregar">Click here to add!</button>
+                <button type="submit" id="addButton">Click here to add!</button>
             </fieldset>
         </form>
+
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Locations</th>
+                    <th>6 am</th>
+                    <th>7 am</th>
+                    <th>8 am</th>
+                    <th>9 am</th>
+                    <th>10 am</th>
+                    <th>11 am</th>
+                    <th>12 pm</th>
+                    <th>1 pm</th>
+                    <th>2 pm</th>
+                    <th>3 pm</th>
+                    <th>4 pm</th>
+                    <th>5 pm</th>
+                    <th>6 pm</th>
+                    <th>7 pm</th>
+                    <th>Location Totals</th>
+                </tr>
+            </thead>
+            <tbody id="bodyRow">
+                <!-- Rows will be inserted here dynamically -->
+            </tbody>
+            <tfoot id="footRow">
+                <!-- Footer will be updated dynamically -->
+            </tfoot>
+        </table>
     </main>
     <footer>
-
     </footer>
     <script src="js/app.js"></script>
 </body>

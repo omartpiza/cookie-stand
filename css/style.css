@@ -69,19 +69,35 @@ th {
     background-color: lightgrey;
 }
 
+tbody tr td:last-child {
+    background-color: rgb(235, 190, 66);
+}
+
 td:first-child {
     background-color: lightgrey;
 }
 
-tr:not(:first-child) td:last-child {
-    background-color: lightyellow;
-}
-
-tr:last-child td:not(:first-child) {
+tfoot td {
     background-color: lightblue;
 }
 
-tr:last-child td:last-child {
+tfoot td:first-child {
+    background-color: lightgrey;
+}
+
+tfoot td:last-child {
+    background-color: lightgreen;
+}
+
+tfoot tr td {
+    background-color: lightblue;
+}
+
+tfoot tr td:first-child {
+    background-color: lightgrey;
+}
+
+tfoot tr td:last-child {
     background-color: lightgreen;
 }
 
